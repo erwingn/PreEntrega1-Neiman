@@ -12,9 +12,19 @@ function cartaAleatoria(min, max) {
 
   while(seguirJugando===true){
     carta1 = cartaAleatoria(min,max)
-    prediccion = parseInt(prompt(`La carta es ${carta1}. Indicar si la proxima carta sera: 1-mayor, 2-igual o 3-menor`))
+
+    do{
+        prediccion = parseInt(prompt(`La carta actual es ${carta1}. Indicar si la proxima carta sera: 1-mayor, 2-igual o 3-menor`))
+        if(prediccion>=1 && prediccion<=3 ){
+
+        } else {
+            alert('Error de datos. Por favor ingrese un valor entre 1 y 3')
+        }
+    } while(prediccion<1 || prediccion>3 || isNaN(prediccion)) 
+    
     carta2 = cartaAleatoria(min,max)
     totalPartidas++
+
     if(prediccion===1){
         if(carta2>carta1){
             partidasGanadas++
@@ -38,16 +48,18 @@ function cartaAleatoria(min, max) {
         }
     }
 
+
     do{
         desicion = parseInt(prompt(`Desea seguir jugando: 1-Si o 2-No`))
-    } while(desicion>2 || desicion<1)
+        if (desicion===1 ){
+            seguirJugando = true
+        } else if (desicion===2 ) {
+            seguirJugando = false
+            winRate = totalPartidas/partidasGanadas
+            alert(`Felicitaciones la partida ha finalizado. Usted jugo ${totalPartidas} partidas y su winrate es de ${winRate}`)
+        } else{ 
+            alert('Error de ingreso de datos. Por favor ingrese un valor entre 1 y 2')
+        }
+    } while(desicion>2 || desicion<1 || isNaN(desicion))
     
-    if(desicion===1){
-        seguirJugando = true
-    } else{
-        seguirJugando = true
-        winRate = totalPartidas/partidasGanadas
-        alert(`Felicitaciones la partida ha finalizado. Usted jugo ${totalPartidas} partidas y su winrate es de ${winRate}`)
-    }
-
 }
