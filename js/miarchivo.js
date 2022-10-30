@@ -5,7 +5,7 @@ let partidasGanadas = 0
 let winRate = 0
 let seguirJugando = true
 
-
+//carta
 function cartaAleatoria(min, max) {
     return Math.trunc(Math.random() * (max - min) + min)
   }
@@ -28,23 +28,23 @@ function cartaAleatoria(min, max) {
     if(prediccion===1){
         if(carta2>carta1){
             partidasGanadas++
-            alert(`Correcto. La carta ${carta1} es mayor a la ${carta2}`)
+            alert(`Correcto. La carta ${carta2} es mayor a la ${carta1}`)
         } else {
-            alert(`Incorrecto. La carta ${carta1} NO es mayor a la ${carta2}`)
+            alert(`Incorrecto. La carta ${carta2} NO es mayor a la ${carta1}`)
         }
     } else if (prediccion===2){
         if(carta2===carta1){
             partidasGanadas++
-            alert(`Correcto. La carta ${carta1} es igual a la ${carta2}`)
+            alert(`Correcto. La carta ${carta2} es igual a la ${carta1}`)
         } else {
-            alert(`Incorrecto. La carta ${carta1} NO es igual a la ${carta2}`)
+            alert(`Incorrecto. La carta ${carta2} NO es igual a la ${carta1}`)
         }
     } else {
         if(carta2<carta1){
             partidasGanadas++
-            alert(`Correcto. La carta ${carta1} es menor a la ${carta2}`)
+            alert(`Correcto. La carta ${carta2} es menor a la ${carta1}`)
         } else {
-            alert(`Incorrecto. La carta ${carta1} NO es menor a la ${carta2}`)
+            alert(`Incorrecto. La carta ${carta2} NO es menor a la ${carta1}`)
         }
     }
 
@@ -55,8 +55,8 @@ function cartaAleatoria(min, max) {
             seguirJugando = true
         } else if (desicion===2 ) {
             seguirJugando = false
-            winRate = totalPartidas/partidasGanadas
-            alert(`Felicitaciones la partida ha finalizado. Usted jugo ${totalPartidas} partidas y su winrate es de ${winRate}`)
+            winRate = partidasGanadas/totalPartidas*100
+            alert(`Felicitaciones la partida ha finalizado. Usted jugo ${totalPartidas} partidas y su winrate es de ${winRate.toFixed(2)} %`)
         } else{ 
             alert('Error de ingreso de datos. Por favor ingrese un valor entre 1 y 2')
         }
