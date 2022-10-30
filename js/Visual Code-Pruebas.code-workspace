@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../Visual Code-Pruebas"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "JuegoCartaPuente"
+	}
+}
