@@ -50,16 +50,16 @@ function cartaAleatoria(min, max) {
 
 
     do{
-        desicion = parseInt(prompt(`Desea seguir jugando: 1-Si o 2-No`))
-        if (desicion===1 ){
+        decision = parseInt(prompt(`Desea seguir jugando: 1-Si o 2-No`))
+        if (decision===1 ){
             seguirJugando = true
-        } else if (desicion===2 ) {
+        } else if (decision===2 ) {
             seguirJugando = false
             winRate = partidasGanadas/totalPartidas*100
             alert(`Felicitaciones la partida ha finalizado. Usted jugo ${totalPartidas} partidas y su winrate es de ${winRate.toFixed(2)} %`)
         } else{ 
             alert('Error de ingreso de datos. Por favor ingrese un valor entre 1 y 2')
         }
-    } while(desicion>2 || desicion<1 || isNaN(desicion))
+    } while(decision>2 || decision<1 || isNaN(decision))
     
 }
